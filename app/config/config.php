@@ -6,7 +6,7 @@ return new \Phalcon\Config(array(
 		'host'        => '127.0.0.1',
 		'username'    => 'root',
 		'password'    => '',
-		'dbname'      => 'vokuro',
+		'dbname'      => 'phalconza',
 	),
 	'application' => array(
 		'controllersDir' => __DIR__ . '/../../app/controllers/',
@@ -17,18 +17,18 @@ return new \Phalcon\Config(array(
 		'pluginsDir'     => __DIR__ . '/../../app/plugins/',
 		'cacheDir'       => __DIR__ . '/../../app/cache/',
 		'baseUri'        => '/',
-		'publicUrl'		 => 'vokuro.phalconphp.com',
-		'cryptSalt'		 => '$9diko$.f#11'
+		'publicUrl'		 => '01phalconza.loc',
+		'cryptSalt'		 => '$9gi4o$.f#21'
 	),
 	'mail' => array(
-		'fromName' => 'Vokuro',
-		'fromEmail' => 'phosphorum@phalconphp.com',
+		'fromName' => 'Skidonza',
+		'fromEmail' => 'skidonza@gmail.com',
 		'smtp' => array(
 			'server' => 'smtp.gmail.com',
 			'port' => 587,
 			'security' => 'tls',
-			'username' => '',
-			'password' => '',
+			'username' => 'skidonza',
+			'password' => '12skidonza12!',
 		)
 	),
 	'amazon' => array(

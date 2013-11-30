@@ -23,7 +23,7 @@ class Mail extends Component
 
 	protected $_amazonSes;
 
-	protected $_directSmtp = false;
+	protected $_directSmtp = true;
 
 	/**
 	 * Send a raw e-mail via AmazonSES

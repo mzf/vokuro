@@ -11,31 +11,33 @@ use Phalcon\Mvc\Model;
  */
 class FailedLogins extends Model
 {
-	/**
-	 * @var integer
-	 */
-	public $id;
 
-	/**
-	 * @var integer
-	 */
-	public $usersId;
+    /**
+     * @var integer
+     */
+    public $id;
 
-	/**
-	 * @var string
-	 */
-	public $ipAddress;
+    /**
+     * @var integer
+     */
+    public $usersId;
 
-	/**
-	 * @var integer
-	 */
-	public $attempted;
+    /**
+     * @var string
+     */
+    public $ipAddress;
 
-	public function initialize()
-	{
-		$this->belongsTo('usersId', 'Vokuro\Models\Users', 'id', array(
-			'alias' => 'user'
-		));
-	}
+    /**
+     * @var integer
+     */
+    public $attempted;
+
+    public function initialize()
+    {
+        $this->setSource('users_failed_logins');
+        $this->belongsTo('usersId', 'Vokuro\Models\Users', 'id', array(
+            'alias' => 'user'
+        ));
+    }
 
 }

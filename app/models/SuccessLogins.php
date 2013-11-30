@@ -11,31 +11,34 @@ use Phalcon\Mvc\Model;
  */
 class SuccessLogins extends Model
 {
-	/**
-	 * @var integer
-	 */
-	public $id;
 
-	/**
-	 * @var integer
-	 */
-	public $usersId;
+    /**
+     * @var integer
+     */
+    public $id;
 
-	/**
-	 * @var string
-	 */
-	public $ipAddress;
+    /**
+     * @var integer
+     */
+    public $usersId;
 
-	/**
-	 * @var string
-	 */
-	public $userAgent;
+    /**
+     * @var string
+     */
+    public $ipAddress;
 
-	public function initialize()
-	{
-		$this->belongsTo('usersId', 'Vokuro\Models\Users', 'id', array(
-			'alias' => 'user'
-		));
-	}
+    /**
+     * @var string
+     */
+    public $userAgent;
+
+    public function initialize()
+    {
+        
+        $this->setSource('users_success_logins');
+        $this->belongsTo('usersId', 'Vokuro\Models\Users', 'id', array(
+            'alias' => 'user'
+        ));
+    }
 
 }

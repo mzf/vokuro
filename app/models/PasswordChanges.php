@@ -11,45 +11,47 @@ use Phalcon\Mvc\Model;
  */
 class PasswordChanges extends Model
 {
-	/**
-	 * @var integer
-	 */
-	public $id;
 
-	/**
-	 * @var integer
-	 */
-	public $usersId;
+    /**
+     * @var integer
+     */
+    public $id;
 
-	/**
-	 * @var string
-	 */
-	public $ipAddress;
+    /**
+     * @var integer
+     */
+    public $usersId;
 
-	/**
-	 * @var string
-	 */
-	public $userAgent;
+    /**
+     * @var string
+     */
+    public $ipAddress;
 
-	/**
-	 * @var integer
-	 */
-	public $createdAt;
+    /**
+     * @var string
+     */
+    public $userAgent;
 
-	/**
-	 * Before create the user assign a password
-	 */
-	public function beforeValidationOnCreate()
-	{
-		//Timestamp the confirmaton
-		$this->createdAt = time();
-	}
+    /**
+     * @var integer
+     */
+    public $createdAt;
 
-	public function initialize()
-	{
-		$this->belongsTo('usersId', 'Vokuro\Models\Users', 'id', array(
-			'alias' => 'user'
-		));
-	}
+    /**
+     * Before create the user assign a password
+     */
+    public function beforeValidationOnCreate()
+    {
+        //Timestamp the confirmaton
+        $this->createdAt = time();
+    }
+
+    public function initialize()
+    {
+        $this->setSource('users_password_changes');
+        $this->belongsTo('usersId', 'Vokuro\Models\Users', 'id', array(
+            'alias' => 'user'
+        ));
+    }
 
 }
